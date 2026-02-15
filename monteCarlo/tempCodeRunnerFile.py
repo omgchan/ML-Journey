@@ -65,11 +65,10 @@ class Betting_Simualtion:
         return results, stats
 
     def plot_results(self, results, strategy_name):
-        sns.kdeplot(results, fill=True, label=strategy_name)
+        sns.histplot(results, bins=30, kde=True)
         plt.title(f'{strategy_name} Final Values Distribution')
         plt.xlabel('Final Value')
         plt.ylabel('Frequency')
-        plt.legend()
         plt.show()
 
 
